@@ -59,7 +59,7 @@ fun Registration(
                 verticalArrangement = Arrangement.Top,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 40.dp)
+                    .padding(horizontal = 50.dp)
             ) {
 
                 Image(painter = painterResource(id = R.drawable.logowhite),
