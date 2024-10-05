@@ -76,7 +76,7 @@ fun Registration(
                         fontSize = 28.sp,
                         fontFamily = fontFamily,
                         fontWeight = FontWeight(800),
-                        color = Color(0xFFBCC900),
+                        color = Color.White,
                         textAlign = TextAlign.Center
 
                     ),
@@ -89,7 +89,7 @@ fun Registration(
                     style = TextStyle(
                         fontSize = 15.sp,
                         fontFamily = fontFamily,
-                        color = Color.White,
+                        color = Color(0xFFF2F5C0),
                         textAlign = TextAlign.Center
                     ),
                     modifier = Modifier
