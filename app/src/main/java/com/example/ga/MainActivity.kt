@@ -36,6 +36,8 @@ fun NavigationView() {
         composable("welcome"){ Welcome(navController)}
         composable("login"){ Registration(navController) }
         composable("signup"){ Registration2(navController) }
+        composable("map"){ Map(navController) }
+        composable("catalog"){ Catalog(navController) }
     }
 
 }
