@@ -1,27 +1,17 @@
 package com.example.ga
 
-import android.graphics.Paint.Align
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -41,9 +31,9 @@ import com.example.ga.components.DontHaveAccountRow
 import com.example.ga.ui.theme.fontFamily
 
 @Composable
-fun Registration(navController: NavHostController) {
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
+fun Catalog(
+    navController: NavHostController
+) {
 
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -63,61 +53,25 @@ fun Registration(navController: NavHostController) {
                 verticalArrangement = Arrangement.Top,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 40.dp)
+                    .padding(horizontal = 40.dp, vertical = 100.dp)
             ) {
 
-                Image(painter = painterResource(id = R.drawable.logowhite),
-                    contentDescription = null,
-                    modifier = Modifier
-                        .padding(top = 30.dp)
-                        .height(200.dp)
-                        .width(200.dp)
-                        .padding(bottom = 30.dp)
-                )
 
-                Text(text = "Вход",
+                Text("Тут будет каталог(((! Его еще не существет, он только в моей бедной фанатазии...",
                     style = TextStyle(
-                        fontSize = 28.sp,
+                        fontSize = 30.sp,
                         fontFamily = fontFamily,
-                        fontWeight = FontWeight(800),
                         color = Color.White,
                         textAlign = TextAlign.Center
-
-                    ),
-                    modifier = Modifier
-
-                        .padding(bottom = 30.dp)
-                )
-
-                Text("Войдите, чтобы восстановить свои прошлые данные!",
-                    style = TextStyle(
-                        fontSize = 15.sp,
-                        fontFamily = fontFamily,
-                        color = Color(0xFFF2F5C0),
-                        textAlign = TextAlign.Center
                     ),
                     modifier = Modifier
                         .padding(bottom = 30.dp)
                 )
 
 
-                CTextField(hint = "Email", value = email, onValueChange = { email = it })
 
-                CTextField(hint = "Пароль", value = password, onValueChange = { password = it })
 
-                Spacer(modifier = Modifier.height(50.dp))
 
-                CButton(text = "Войти",
-                    onClick = {
-                        navController.navigate("map")
-                    }
-                )
-
-                DontHaveAccountRow(
-                    onSignupTap = {
-                        navController.navigate("signup")
-                    }
-                )
 
             }
 
@@ -130,6 +84,6 @@ fun Registration(navController: NavHostController) {
 
 @Preview(showBackground = true, widthDp = 320, heightDp = 640)
 @Composable
-fun LoginScreenPreview() {
-    Welcome(rememberNavController())
+fun CatalogPreview() {
+    Catalog(rememberNavController())
 }
